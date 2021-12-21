@@ -1,24 +1,42 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import {Frame, Heading, Navigation, Page, TopBar} from '@shopify/polaris';
+import {
+  HomeMajor,
+  ChatMajor,
+  CustomersMajor,
+  OrdersMajor,
+  AnalyticsMajor,
+  ProductsMajor,
+  DiscountsMajor,
+  SocialAdMajor,
+  ProfileMajor,
+
+} from '@shopify/polaris-icons';
+import TopNav from './components/TopNav'
+import PageContent from './components/PageContent';
+import SideMenu from './components/SideMenu';
+
+const navigationMarkup = <SideMenu/>;
+const topBarMarkup = <TopNav/>;
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+    {/* <div className="App"> */}
+      <Frame
+        topBar={topBarMarkup}
+        navigation={navigationMarkup}
+      >
+          {/* <TopNav/> */}
+          {/* <SideMenu/> */}
+          <PageContent/>
+      </Frame>
+
+
+    {/* </div> */}
+    </React.Fragment>
   );
 }
 
